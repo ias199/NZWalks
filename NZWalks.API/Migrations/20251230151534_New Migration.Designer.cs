@@ -12,8 +12,8 @@ using NZWalks.API.Data;
 namespace NZWalks.API.Migrations
 {
     [DbContext(typeof(NZWalksDbContext))]
-    [Migration("20251205112652_Second Migration")]
-    partial class SecondMigration
+    [Migration("20251230151534_New Migration")]
+    partial class NewMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,6 +38,23 @@ namespace NZWalks.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Difficulties");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("5642667c-737c-4d2a-9993-66fff75f9212"),
+                            Name = "Easy"
+                        },
+                        new
+                        {
+                            Id = new Guid("48e98710-9b62-4b8d-a990-a770b9d372ca"),
+                            Name = "Medium"
+                        },
+                        new
+                        {
+                            Id = new Guid("7b3de3f4-9740-43dd-ad3f-d3d092822296"),
+                            Name = "Hard"
+                        });
                 });
 
             modelBuilder.Entity("NZWalks.API.Models.Region", b =>
@@ -60,6 +77,47 @@ namespace NZWalks.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Regions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3442236d-cb43-4e94-8a8b-e22c41981ef3"),
+                            Code = "AKL",
+                            Name = "Auckland",
+                            RegionImageUrl = "https://images.pexels.com/photos/5169056/pexels-photo-5169056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        },
+                        new
+                        {
+                            Id = new Guid("fb837e87-dff9-42f3-ac44-8f420ee39289"),
+                            Code = "NTL",
+                            Name = "Northland"
+                        },
+                        new
+                        {
+                            Id = new Guid("836a946a-fb51-4283-9ac1-40c7d58fad86"),
+                            Code = "BOP",
+                            Name = "Bay Of Plenty"
+                        },
+                        new
+                        {
+                            Id = new Guid("3f42f64f-8cdf-4425-8e5e-bab6a5af99e2"),
+                            Code = "WGN",
+                            Name = "Wellington",
+                            RegionImageUrl = "https://images.pexels.com/photos/4350631/pexels-photo-4350631.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        },
+                        new
+                        {
+                            Id = new Guid("fad3b984-9c82-48f4-a409-5a0e582e0332"),
+                            Code = "NSN",
+                            Name = "Nelson",
+                            RegionImageUrl = "https://images.pexels.com/photos/13918194/pexels-photo-13918194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        },
+                        new
+                        {
+                            Id = new Guid("eba7c346-28c5-4a33-ac34-06414163e993"),
+                            Code = "STL",
+                            Name = "Southland"
+                        });
                 });
 
             modelBuilder.Entity("NZWalks.API.Models.Walk", b =>
