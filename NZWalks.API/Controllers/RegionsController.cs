@@ -103,14 +103,6 @@ namespace NZWalks.API.Controllers
             regionDomainModel.RegionImageUrl = updateRegionRequestDto.RegionImageUrl;
             await dbContext.SaveChangesAsync();
 
-            var regionDto = new RegionDto
-            {
-                Id = regionDomainModel.Id,
-                Code = regionDomainModel.Code,
-                Name = regionDomainModel.Name,
-                RegionImageUrl = regionDomainModel.RegionImageUrl
-            };
-            return Ok(regionDto);
         }
         [HttpDelete]
         [Route("{id:Guid}")]
